@@ -29,14 +29,16 @@
             <div class="col-md-10">
 
                 @Html.DropDownListFor(model => model.IdPate, Model.PatesDisponibles.Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Nom }))
+                @Html.ValidationMessageFor(model => model.IdPate, "", new { @class = "text-danger" })
             </div>
         </div>
 
          <div class="form-group">
-            <div class="col-md-10">
-            @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.ListBoxFor(model => model.IdsIngredients, Model.IngredientsDisponibles.Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Nom }))
-            </div>
+             <div class="col-md-10">
+                 @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
+                 @Html.ListBoxFor(model => model.IdsIngredients, Model.IngredientsDisponibles.Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Nom }))
+                 @Html.ValidationMessageFor(model => model.IdsIngredients, "", new { @class = "text-danger" })
+             </div>
         </div>
 
         <div class="form-group">

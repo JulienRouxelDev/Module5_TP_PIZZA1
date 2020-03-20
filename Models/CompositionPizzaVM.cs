@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using TP_MODULE5_PIZZA.Utils;
@@ -11,7 +12,11 @@ namespace TP_MODULE5_PIZZA.Models
 		private Pizza pizza;
 		private List<Ingredient> ingredientsDisponibles;
 		private List<Pate> patesDisponibles;
+		
+		[Required]
 		public int IdPate { get; set; }
+		[Required]
+		//[MinLength(2)]
 		public List<int> IdsIngredients { get; set; }
 
 		//public CompositionPizzaVM()
